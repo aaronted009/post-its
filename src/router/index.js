@@ -1,4 +1,7 @@
 import App from "../views/App.vue";
+import EditPostIt from "@/components/EditPostIt.vue";
+import ShowAllPostIts from "@/components/ShowAllPostIts.vue";
+import CreatePostIt from "@/components/CreatePostIt.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
@@ -8,6 +11,21 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: App,
+    },
+    {
+      path: "/create",
+      name: "create-note",
+      component: CreatePostIt,
+    },
+    {
+      path: "/notes",
+      name: "showAll",
+      component: ShowAllPostIts,
+    },
+    {
+      path: "/notes/:id",
+      name: "note",
+      component: EditPostIt,
     },
   ],
 });
