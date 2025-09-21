@@ -1,7 +1,8 @@
 <script setup>
 import { onMounted } from "vue";
 import { useNoteStore } from "@/stores/note";
-import CreateNote from "@/components/CreateNote.vue";
+import CreateNoteButton from "@/components/CreateNoteButton.vue";
+import Note from "@/components/Note.vue";
 
 const note = useNoteStore();
 
@@ -11,19 +12,16 @@ onMounted(async () => {
 </script>
 
 <template>
-  <CreateNote />
-  <div v-for="postit in note.postits">
-    <ul>
-      <li>
-        Id :
-        {{ postit._id }} | Title : {{ postit.title }} | Content :
-        {{ postit.content }} | Created at : {{ postit.createdAt }} | Updated at
-        : {{ postit.updatedAt }}
-      </li>
-      <RouterLink :to="{ name: 'note', params: { id: postit._id } }"
-        >Edit</RouterLink
-      >
-      <button @click="note.deletePostIt(postit._id)">Delete</button>
-    </ul>
-  </div>
+  <main class="text-start p-5">
+    <CreateNoteButton />
+    <section class="grid grid-cols-4 gap-3 my-5">
+      <div v-for="postit in note.postits">
+        <Note
+          :title="postit.title"
+          :content="postit.content[0]"
+          :note-id="postit._id"
+        />
+      </div>
+    </section>
+  </main>
 </template>
