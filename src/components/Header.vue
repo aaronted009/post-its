@@ -1,5 +1,5 @@
 <template>
-  <section class="p-5 shadow-sm shadow-gray-400 mb-5">
+  <section class="relative top-0 w-full p-5 shadow-sm shadow-gray-400 mb-5">
     <RouterLink :to="{ name: 'home' }">
       <div class="flex font-bold text-3xl">
         <div>📑</div>
