@@ -12,11 +12,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <form>
-    <input type="text" name="title" id="" v-model="note.postItTitle" />
-    <br />
-    <textarea name="content" id="" v-model="note.postItContent"></textarea>
-    <br />
-    <input @click="note.create" type="button" value="Créer" />
-  </form>
+  <main class="w-full mx-5">
+    <form class="bg-green-100 p-5 rounded">
+      <label for="title" class="block text-sm/6 font-medium">Titre</label>
+      <input class="border rounded" type="text" name="title" id="title" v-model="note.postItTitle" />
+      <br />
+      <label for="content" class="block text-sm/6 font-medium">Contenu</label>
+      <textarea class="border rounded" name="content" id="content" v-model="note.postItContent"></textarea>
+      <br />
+      <input @click="note.create" type="button" value="Créer" class="border rounded cursor-pointer mt-5 px-5 py-2 bg-green-300" />
+    </form>
+  </main>
 </template>
