@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted } from "vue";
 import { useNoteStore } from "@/stores/note";
+import CreateNote from "@/components/CreateNote.vue";
 
 const note = useNoteStore();
 
@@ -10,7 +11,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <RouterLink :to="{ name: 'create-note' }">Create a post-it</RouterLink>
+  <CreateNote />
   <div v-for="postit in note.postits">
     <ul>
       <li>
