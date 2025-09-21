@@ -2,6 +2,7 @@ import App from "../views/App.vue";
 import EditPostIt from "@/views/EditPostIt.vue";
 import ShowAllPostIts from "@/views/ShowAllPostIts.vue";
 import CreatePostIt from "@/views/CreatePostIt.vue";
+import HomePage from "@/views/HomePage.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
@@ -10,7 +11,7 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: App,
+      component: HomePage,
     },
     {
       path: "/create",
