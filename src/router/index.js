@@ -1,7 +1,7 @@
 import App from "../views/App.vue";
-import EditPostIt from "@/components/EditPostIt.vue";
-import ShowAllPostIts from "@/components/ShowAllPostIts.vue";
-import CreatePostIt from "@/components/CreatePostIt.vue";
+import EditPostIt from "@/views/EditPostIt.vue";
+import ShowAllPostIts from "@/views/ShowAllPostIts.vue";
+import CreatePostIt from "@/views/CreatePostIt.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
