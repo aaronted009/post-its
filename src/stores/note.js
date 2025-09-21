@@ -1,5 +1,6 @@
 import { defineStore, acceptHMRUpdate } from "pinia";
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 
 export const useNoteStore = defineStore(
   "note",
@@ -10,6 +11,7 @@ export const useNoteStore = defineStore(
     const postItTitle = ref("");
     const postItContent = ref("");
     let noteUrl = ref();
+    const router = useRouter();
 
     //   CRUD methods for Note (Post-it) management
     //   ---------------------------------------------
@@ -112,15 +114,21 @@ export const useNoteStore = defineStore(
     //   ---------------------------------------------
     //   🔼 Notes CRUD methods.
 
+    function redirectToNotePage(noteId) {
+      router.push({ name: "show-note", params: { id: noteId } });
+    }
+
     return {
       url,
       noteUrl,
+      redirectToNotePage,
       postits,
       getAllPostIts,
       postItTitle,
       postItContent,
       create,
       getPostIt,
+      postIt,
       update,
       deletePostIt,
     };

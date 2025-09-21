@@ -4,6 +4,7 @@ import ShowAllPostIts from "@/views/ShowAllPostIts.vue";
 import CreatePostIt from "@/views/CreatePostIt.vue";
 import HomePage from "@/views/HomePage.vue";
 import { createRouter, createWebHistory } from "vue-router";
+import ShowNote from "@/views/ShowNote.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,6 +28,11 @@ const router = createRouter({
       path: "/notes/:id",
       name: "note",
       component: EditPostIt,
+    },
+    {
+      path: "/notes/:id",
+      name: "show-note",
+      component: ShowNote,
     },
   ],
 });
