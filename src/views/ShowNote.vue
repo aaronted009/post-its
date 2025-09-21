@@ -3,6 +3,7 @@ import { onMounted, ref } from "vue";
 import { useNoteStore } from "@/stores/note";
 import { useRoute } from "vue-router";
 import EditNoteButton from "@/components/EditNoteButton.vue";
+import BackToNotes from "@/components/BackToNotes.vue";
 
 const note = useNoteStore();
 const isEditing = ref(false);
@@ -14,14 +15,19 @@ onMounted(async () => {
 });
 </script>
 <template>
-  <section class="relative">
+  <div class="relative text-center m-auto max-w-1/2 mb-5">
+    <BackToNotes />
+  </div>
+  <section
+    class="relative text-center bg-yellow-100 p-5 rounded m-auto max-w-1/2"
+  >
     <div
       class="absolute top-1 right-1 flex gap-3 content-center"
       @click="isEditing = !isEditing"
     >
       <EditNoteButton :note-id="note.postIt._id" />
     </div>
-    <form v-if="isEditing">
+    <form v-if="isEditing" class="bg-yellow-100 p-5 rounded">
       <input type="text" name="title" id="title" v-model="note.postItTitle" />
       <br />
       <textarea

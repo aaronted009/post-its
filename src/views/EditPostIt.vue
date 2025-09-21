@@ -2,6 +2,7 @@
 import { onMounted } from "vue";
 import { useNoteStore } from "@/stores/note";
 import { useRoute } from "vue-router";
+import BackToNotes from "@/components/BackToNotes.vue";
 
 const note = useNoteStore();
 const route = useRoute();
@@ -12,7 +13,10 @@ onMounted(async () => {
 });
 </script>
 <template>
-  <form>
+  <div class="relative text-center m-auto max-w-1/2 mb-5">
+    <BackToNotes />
+  </div>
+  <form class="m-auto text-center bg-yellow-100 p-5 rounded max-w-1/2">
     <input type="text" name="title" id="title" v-model="note.postItTitle" />
     <br />
     <textarea
