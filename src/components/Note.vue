@@ -23,12 +23,16 @@ function truncateString(str, maxLength) {
 }
 </script>
 <template>
-  <div
-    class="relative w-100 h-50 p-5 flex-col gap-3 rounded border cursor-pointer"
-    @click="note.redirectToNotePage(noteId)"
-  >
-    <div class="font-semibold text-xl">{{ truncateString(title, 30) }}</div>
-    <div>{{ truncateString(content, 50) }}</div>
+  <div class="relative rounded border cursor-pointer">
+    <div
+      class="w-100 h-50 p-5 flex-col gap-3"
+      @click="note.redirectToNotePage(noteId)"
+    >
+      <div class="font-semibold text-xl">
+        {{ truncateString(title, 30) }}
+      </div>
+      <div>{{ truncateString(content, 50) }}</div>
+    </div>
     <div class="absolute top-1 right-1 flex gap-3 content-center">
       <EditNoteButton :note-id="noteId" />
       <DeleteNoteButton :note-id="noteId" />
