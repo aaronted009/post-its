@@ -1,6 +1,7 @@
 <script setup>
 import { useNoteStore } from "@/stores/note";
 import { onMounted } from "vue";
+import BackToNotes from "@/components/BackToNotes.vue";
 
 const note = useNoteStore();
 
@@ -13,6 +14,9 @@ onMounted(() => {
 
 <template>
   <main class="w-full px-5">
+    <div class="relative text-center m-auto max-w-1/2 mb-5">
+      <BackToNotes />
+    </div>
     <form class="bg-green-100 p-5 rounded m-auto max-w-1/2">
       <label for="title" class="block text-sm/6 font-medium">Titre</label>
       <input
