@@ -35,7 +35,7 @@ onMounted(() => {
       <br />
       <input
         @click="note.create"
-        type="submit"
+        type="button"
         value="Créer"
         class="rounded shadow-sm shadow-gray-400 cursor-pointer mt-5 px-5 py-2 bg-green-300"
       />
